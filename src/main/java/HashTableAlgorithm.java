@@ -35,8 +35,9 @@ public class HashTableAlgorithm {
 
     public int lengthOfLongestSubString(String s, int version){
         /**
-         * abcabc
-         *      ^
+         * abcabce
+         *       ^
+         *   ^
          * i = 0, 1, 2, 3, 4, 5
          * start = 0, 0, 0, 1, 2, 3
          * lookup = {["a", 0], ["b", 1], ["c", 2]}
@@ -48,6 +49,13 @@ public class HashTableAlgorithm {
          * start = 0, 1, 2
          * lookup = {["e", 0], ["e", 1] }
          * maxLength = 1, 1
+         *
+         * abcbad
+         * ^  ^
+         * i = 0, 1, 2,
+         * start = 0, 0, 0
+         * lookup = {["a", 0], ["b", 1], ["c", 2]  }
+         * maxLength = 1, 2, 3
          */
 
         if (s == null || s.isEmpty()){
