@@ -46,4 +46,25 @@ public class TwoSum {
         }
         return res;
     }
+
+
+    public int[] run (int[] nums, int target, int version){
+
+        int[] res = new int[2];
+        if (nums == null || nums.length < 0)
+            return res;
+
+        Map<Integer, Integer> lookups = new HashMap<Integer, Integer>();
+
+        for(int i = 0; i < nums.length; i++){
+            if (lookups.containsKey(nums[i])){
+                res[0] = lookups.get(nums[i]);
+                res[1] = i;
+            }
+            else {
+                lookups.put(target - nums[i], i);
+            }
+        }
+        return res;
+    }
 }
